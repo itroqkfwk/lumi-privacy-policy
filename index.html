@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMI 개인정보처리방침</title>
+    <style>
+        :root {
+            --bg: #f6f3ee;
+            --surface: rgba(255, 255, 255, 0.84);
+            --text: #1f2a1f;
+            --muted: #5d695f;
+            --line: rgba(44, 76, 52, 0.14);
+            --accent: #44624a;
+            --accent-soft: #dce8d8;
+            --shadow: 0 24px 60px rgba(43, 60, 46, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(137, 178, 146, 0.28), transparent 32%),
+                radial-gradient(circle at top right, rgba(222, 196, 152, 0.22), transparent 28%),
+                linear-gradient(180deg, #f8f5ef 0%, #edf3eb 100%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 20px 80px;
+        }
+
+        .hero,
+        .section {
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            padding: 40px 32px;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.08;
+        }
+
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .meta {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .section {
+            margin-top: 18px;
+            padding: 28px 24px;
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li + li {
+            margin-top: 8px;
+        }
+
+        .notice {
+            padding: 14px 16px;
+            border-left: 4px solid var(--accent);
+            background: rgba(220, 232, 216, 0.55);
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 0.92rem;
+            text-align: center;
+        }
+
+        code {
+            padding: 2px 6px;
+            border-radius: 6px;
+            background: rgba(68, 98, 74, 0.08);
+            font-family: Consolas, monospace;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <section class="hero">
+            <div class="eyebrow">LUMI Privacy Policy</div>
+            <h1>LUMI 개인정보처리방침</h1>
+            <p class="lead">
+                LUMI는 감정 기록, CBT 기록, 커뮤니티 기능을 제공하는 애플리케이션입니다.
+                본 개인정보처리방침은 앱 이용 과정에서 어떤 정보가 수집·저장·전송될 수 있는지와
+                그 이용 목적을 설명합니다.
+            </p>
+            <p class="meta">시행일: 2026-05-22</p>
+        </section>
+
+        <section class="section">
+            <h2>1. 수집하거나 저장할 수 있는 정보</h2>
+            <ul>
+                <li>계정 정보: Google 로그인 사용 시 Firebase Authentication을 통해 사용자 식별자(UID), 이메일 주소, 표시 이름 등 계정 정보가 처리될 수 있습니다.</li>
+                <li>작성 콘텐츠: 일기, 감정 기록, CBT 기록, 커뮤니티 글, 익명 게시글 및 댓글 등 사용자가 직접 입력한 내용이 저장될 수 있습니다.</li>
+                <li>앱 설정 정보: 알림 설정, 온보딩 완료 여부, 잠금 설정, 차단한 작성자 목록 등 앱 동작에 필요한 설정값이 로컬 기기에 저장될 수 있습니다.</li>
+                <li>보안 정보: PIN 잠금 기능 사용 시 PIN 원문은 저장하지 않으며, 해시 처리된 값만 로컬 기기에 저장됩니다.</li>
+                <li>진단 및 사용 정보: Firebase Analytics 및 Firebase Crashlytics를 통해 앱 실행, 저장 이벤트, 오류 정보, 기기/앱 버전 정보가 수집될 수 있습니다.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>2. 정보의 저장 위치</h2>
+            <ul>
+                <li>로컬 저장: 일부 기록과 설정 정보는 기기 내 Room 데이터베이스 및 DataStore에 저장될 수 있습니다.</li>
+                <li>클라우드 저장: Google 로그인 및 동기화 기능 사용 시 일부 정보는 Firebase Authentication 및 Cloud Firestore에 저장될 수 있습니다.</li>
+            </ul>
+            <p class="notice">
+                LUMI는 민감한 감정/CBT 내용을 광고 목적으로 판매하지 않습니다.
+                다만 사용자가 직접 작성한 기록은 동기화 기능 사용 시 Firebase에 저장될 수 있으므로,
+                서비스 이용 전 이를 확인해 주세요.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>3. 정보 이용 목적</h2>
+            <ul>
+                <li>로그인 상태 유지 및 계정 식별</li>
+                <li>기록 저장, 조회, 수정, 동기화 기능 제공</li>
+                <li>커뮤니티 및 익명 게시판 기능 제공</li>
+                <li>앱 오류 분석, 안정성 개선 및 기능 품질 향상</li>
+                <li>기기 내 잠금, 알림, 사용자 맞춤 설정 유지</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>4. 제3자 서비스 사용</h2>
+            <p>LUMI는 아래 외부 서비스를 사용할 수 있습니다.</p>
+            <ul>
+                <li>Google Firebase Authentication: 로그인 및 사용자 인증</li>
+                <li>Google Firebase Firestore: 사용자 데이터 동기화 및 저장</li>
+                <li>Google Firebase Analytics: 사용성 분석 및 이벤트 측정</li>
+                <li>Google Firebase Crashlytics: 오류 수집 및 안정성 개선</li>
+            </ul>
+            <p>
+                외부 서비스의 데이터 처리 방식은 각 서비스 제공자의 정책을 따릅니다.
+                자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a>을 참고해 주세요.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>5. 보관 기간 및 삭제</h2>
+            <ul>
+                <li>로컬 저장 데이터는 사용자가 앱을 삭제하거나 앱 내 기능을 통해 삭제할 때 제거될 수 있습니다.</li>
+                <li>클라우드에 동기화된 데이터는 계정 상태 및 서비스 운영 목적에 따라 보관될 수 있습니다.</li>
+                <li>사용자가 직접 작성한 기록 삭제 시, 동기화 상태에 따라 서버 반영까지 시간이 걸릴 수 있습니다.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>6. 이용자의 권리</h2>
+            <ul>
+                <li>사용자는 앱 사용을 중단하고 로컬 데이터를 삭제할 수 있습니다.</li>
+                <li>Google 계정 연동을 해제하거나 관련 Firebase 데이터를 삭제 요청할 수 있습니다.</li>
+                <li>문의 시 개인정보 처리 관련 확인, 정정, 삭제 요청을 할 수 있습니다.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>7. 보안 조치</h2>
+            <ul>
+                <li>PIN 잠금 정보는 원문이 아닌 해시 값으로 저장됩니다.</li>
+                <li>앱은 보안 설정과 백업 제한 정책을 통해 민감 데이터 보호를 강화할 수 있습니다.</li>
+                <li>전송 및 저장 과정에서 서비스 제공자(Firebase)의 보안 기능을 활용할 수 있습니다.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>8. 아동의 개인정보</h2>
+            <p>
+                LUMI는 법정 아동을 주요 대상으로 설계한 서비스가 아닙니다.
+                관련 법령상 보호자 동의가 필요한 이용자의 경우, 보호자 동의 없이 개인정보를 제공하지 않도록 주의해 주세요.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>9. 정책 변경</h2>
+            <p>
+                본 개인정보처리방침은 서비스 변경, 법령 변경, 기능 추가에 따라 수정될 수 있습니다.
+                중요한 변경이 있는 경우 본 페이지를 통해 업데이트합니다.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>10. 문의처</h2>
+            <p>개인정보 관련 문의나 삭제 요청은 아래 이메일로 연락해 주세요.</p>
+            <p><strong>이메일:</strong> <code>your-email@example.com</code></p>
+            <p class="notice">배포 전에 반드시 실제 문의 가능한 이메일 주소로 변경하세요.</p>
+        </section>
+
+        <section class="section">
+            <h2>11. 고지</h2>
+            <p>
+                LUMI는 감정 기록과 자기 성찰을 돕기 위한 앱이며, 의료적 진단이나 치료를 제공하지 않습니다.
+                건강 상태에 대한 전문적인 판단이 필요한 경우 의료 전문가와 상담하시기 바랍니다.
+            </p>
+        </section>
+
+        <footer>© LUMI. All rights reserved.</footer>
+    </main>
+</body>
+</html>
