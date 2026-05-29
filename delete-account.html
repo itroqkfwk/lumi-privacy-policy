@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMI 계정 삭제 안내</title>
+    <style>
+        :root {
+            --bg: #f6f3ee;
+            --surface: rgba(255, 255, 255, 0.84);
+            --text: #1f2a1f;
+            --muted: #5d695f;
+            --line: rgba(44, 76, 52, 0.14);
+            --accent: #44624a;
+            --accent-soft: #dce8d8;
+            --shadow: 0 24px 60px rgba(43, 60, 46, 0.12);
+            --danger: #c0392b;
+            --danger-soft: rgba(192, 57, 43, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(137, 178, 146, 0.28), transparent 32%),
+                radial-gradient(circle at top right, rgba(222, 196, 152, 0.22), transparent 28%),
+                linear-gradient(180deg, #f8f5ef 0%, #edf3eb 100%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 20px 80px;
+        }
+
+        .hero,
+        .section {
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            padding: 40px 32px;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.08;
+        }
+
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .meta {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .section {
+            margin-top: 18px;
+            padding: 28px 24px;
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        ul, ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li + li {
+            margin-top: 8px;
+        }
+
+        ol li {
+            margin-top: 10px;
+        }
+
+        .notice {
+            padding: 14px 16px;
+            border-left: 4px solid var(--accent);
+            background: rgba(220, 232, 216, 0.55);
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        .warning {
+            padding: 14px 16px;
+            border-left: 4px solid var(--danger);
+            background: var(--danger-soft);
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        .step-list {
+            counter-reset: step;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .step-list li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 48px;
+            margin-top: 16px;
+        }
+
+        .step-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-list li strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 0.92rem;
+            text-align: center;
+        }
+
+        code {
+            padding: 2px 6px;
+            border-radius: 6px;
+            background: rgba(68, 98, 74, 0.08);
+            font-family: Consolas, monospace;
+            font-size: 0.95em;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .data-table th {
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .data-table td {
+            font-size: 0.95rem;
+        }
+
+        .badge-delete {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: var(--danger-soft);
+            color: var(--danger);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-keep {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: rgba(243, 156, 18, 0.1);
+            color: #e67e22;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <section class="hero">
+            <div class="eyebrow">LUMI Account Deletion</div>
+            <h1>LUMI 계정 삭제 안내</h1>
+            <p class="lead">
+                LUMI 사용자는 언제든지 계정 삭제를 요청할 수 있습니다.
+                이 페이지에서는 계정 삭제 방법, 삭제되는 데이터, 보관되는 데이터에 대해 안내합니다.
+            </p>
+            <p class="meta">시행일: 2026-05-29</p>
+        </section>
+
+        <section class="section">
+            <h2>1. 계정 삭제 요청 방법</h2>
+            <p>아래 방법 중 하나를 통해 계정 삭제를 요청할 수 있습니다.</p>
+            <ol class="step-list">
+                <li>
+                    <strong>앱 내 삭제</strong>
+                    LUMI 앱 → 설정 → 계정 관리 → 계정 삭제 요청
+                </li>
+                <li>
+                    <strong>이메일 요청</strong>
+                    아래 이메일로 계정 삭제를 요청할 수 있습니다.
+                    계정에 등록된 이메일 주소를 포함하여 보내주세요.<br>
+                    <code>kjd12359@gmail.com</code>
+                </li>
+            </ol>
+            <p class="notice">
+                이메일 요청 시 본인 확인을 위해 가입 시 사용한 Google 계정 이메일 주소를 함께 기재해 주세요.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>2. 삭제되는 데이터</h2>
+            <p>계정 삭제 요청이 처리되면 다음 데이터가 영구적으로 삭제됩니다.</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>데이터 유형</th>
+                        <th>처리</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>계정 정보 (UID, 이메일, 표시 이름)</td>
+                        <td><span class="badge-delete">삭제</span></td>
+                    </tr>
+                    <tr>
+                        <td>감정 기록 및 일기</td>
+                        <td><span class="badge-delete">삭제</span></td>
+                    </tr>
+                    <tr>
+                        <td>CBT 기록</td>
+                        <td><span class="badge-delete">삭제</span></td>
+                    </tr>
+                    <tr>
+                        <td>커뮤니티 게시글 및 댓글</td>
+                        <td><span class="badge-delete">삭제</span></td>
+                    </tr>
+                    <tr>
+                        <td>앱 설정 정보 (알림, 잠금 등)</td>
+                        <td><span class="badge-delete">삭제</span></td>
+                    </tr>
+                    <tr>
+                        <td>Firebase Authentication 계정</td>
+                        <td><span class="badge-delete">삭제</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>3. 보관될 수 있는 데이터</h2>
+            <p>다음 데이터는 법령상 의무 또는 서비스 운영 목적에 따라 일정 기간 보관될 수 있습니다.</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>데이터 유형</th>
+                        <th>보관 기간</th>
+                        <th>사유</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>오류 및 진단 로그 (Crashlytics)</td>
+                        <td><span class="badge-keep">최대 90일</span></td>
+                        <td>서비스 안정성 개선</td>
+                    </tr>
+                    <tr>
+                        <td>앱 사용 분석 데이터 (Analytics)</td>
+                        <td><span class="badge-keep">최대 14개월</span></td>
+                        <td>Google Analytics 기본 보관 정책</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="notice">
+                보관 기간이 경과한 데이터는 자동으로 삭제됩니다.
+                보관 중인 데이터는 식별 불가능한 형태로 처리되며, 마케팅 또는 광고 목적으로 사용되지 않습니다.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>4. 삭제 처리 기간</h2>
+            <ul>
+                <li><strong>앱 내 삭제:</strong> 즉시 처리 (일부 동기화 데이터는 최대 30일 소요)</li>
+                <li><strong>이메일 요청:</strong> 요청 접수 후 최대 7영업일 이내 처리</li>
+            </ul>
+            <p class="warning">
+                ⚠️ 계정 삭제는 되돌릴 수 없습니다. 삭제 전 필요한 데이터를 반드시 백업해 주세요.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>5. 로컬 데이터 삭제</h2>
+            <p>
+                서버 데이터 외에 기기에 저장된 로컬 데이터(일기, 설정, PIN 정보 등)도 삭제하려면
+                기기에서 LUMI 앱을 삭제(언인스톨)해 주세요.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>6. 문의처</h2>
+            <p>계정 삭제 관련 문의사항은 아래 이메일로 연락해 주세요.</p>
+            <p><strong>앱 이름:</strong> LUMI</p>
+            <p><strong>개발자:</strong> itroqkfwk</p>
+            <p><strong>이메일:</strong> <code>kjd12359@gmail.com</code></p>
+        </section>
+
+        <footer>© LUMI. All rights reserved.</footer>
+    </main>
+</body>
+</html>
