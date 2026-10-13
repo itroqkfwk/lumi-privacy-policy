@@ -1,20 +1,6 @@
-# LUMI Privacy Policy
+# LUMI 공개 개인정보 안내
 
-LUMI 앱의 개인정보처리방침 공개용 저장소입니다.
+- [개인정보처리방침](https://itroqkfwk.github.io/lumi-privacy-policy/) — index.html
+- [계정·데이터 삭제](https://itroqkfwk.github.io/lumi-privacy-policy/delete-account.html) — delete-account.html
 
-## 파일
-- `index.html`: Play Console에 제출할 개인정보처리방침 페이지
-
-## GitHub Pages 배포
-이 저장소를 GitHub에 공개 저장소로 올린 뒤 Pages를 활성화하면 됩니다.
-
-예상 URL 형식:
-
-```text
-https://<github-username>.github.io/lumi-privacy-policy/
-```
-
-## 배포 전 확인
-- `your-email@example.com`을 실제 문의 이메일로 변경
-- 문구가 현재 앱 기능과 맞는지 확인
-- GitHub 저장소를 `public`으로 생성
+GitHub Pages가 main 브랜치의 루트 HTML을 공개합니다. 앱의 실제 기능과 운영 설정을 확인한 뒤 두 문서의 안내를 함께 갱신합니다.

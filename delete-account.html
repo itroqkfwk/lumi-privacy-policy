@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMI 계정 삭제 안내</title>
+    <title>LUMI 계정 및 데이터 삭제 안내</title>
     <style>
         :root {
             --bg: #f6f3ee;
@@ -223,146 +223,119 @@
             font-size: 0.85rem;
             font-weight: 600;
         }
+
+        html { scroll-padding-top: 20px; }
+        body { overflow-wrap: anywhere; }
+        .page-nav { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 20px; }
+        .page-nav a { font-weight: 600; }
+        .table-wrap { overflow-x: auto; }
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        .data-table th, .data-table td { padding: 10px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        .data-table th { background: var(--accent-soft); color: var(--accent); }
+        ol { padding-left: 22px; }
+        .section ul + p, .section ol + p, .table-wrap + p { margin-top: 16px; }
+        .mail-action { display: inline-block; padding: 10px 16px; border-radius: 12px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+        @media (max-width: 600px) {
+            .wrap { padding: 24px 16px 40px; }
+            .hero { padding: 28px 20px; }
+            .section { padding: 22px 18px; border-radius: 20px; }
+            h1 { font-size: 2rem; line-height: 1.25; }
+            .data-table th, .data-table td { padding: 8px; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
     <main class="wrap">
         <section class="hero">
-            <div class="eyebrow">LUMI Account Deletion</div>
+            <div class="eyebrow">LUMI Account &amp; Data Deletion</div>
             <h1>LUMI 계정 및 데이터 삭제 안내</h1>
-            <p class="lead">
-                LUMI 사용자는 언제든지 계정 및 데이터의 삭제를 요청할 수 있습니다.
-                이 페이지에서는 데이터 삭제 방법, 삭제되는 데이터, 보관되는 데이터에 대해 안내합니다.
-            </p>
-            <p class="meta">시행일: 2026-05-29</p>
+            <p class="lead">LUMI - 감정일기 &amp; CBT의 계정과 데이터를 삭제하거나, 계정을 유지한 채 일부 기록만 삭제할 수 있습니다. 앱을 설치하지 않아도 아래 이메일로 요청할 수 있습니다.</p>
+            <p class="meta">시행일: 2026-10-13</p>
+            <nav class="page-nav" aria-label="삭제 방법 선택">
+                <a href="#account-deletion">계정 삭제</a>
+                <a href="#record-deletion">계정 유지·일부 기록 삭제</a>
+                <a href="#email-request">앱 없이 이메일 요청</a>
+                <a href="index.html">개인정보처리방침</a>
+            </nav>
         </section>
-
-        <section class="section">
-            <h2>1. 기기 내 로컬 데이터 삭제</h2>
-            <p>기기에 저장된 일기, CBT 기록, 감정 기록 및 앱 설정을 즉시 삭제할 수 있습니다.</p>
+        <section class="section" id="account-deletion">
+            <h2>1. 앱에서 계정과 서버 데이터 삭제</h2>
+            <ol class="step-list">
+                <li>삭제할 LUMI 계정으로 로그인합니다. Google·카카오 로그인 모두 해당합니다.</li>
+                <li><strong>설정 → 데이터 관리 → 계정 및 서버 데이터 삭제</strong>를 선택합니다.</li>
+                <li>삭제 범위를 확인하고 <strong>영구 삭제</strong>를 누릅니다.</li>
+                <li>서버 처리가 성공하면 로그아웃되며 해당 기기의 계정 관련 기록과 설정도 정리됩니다.</li>
+            </ol>
+            <p>연결 오류나 삭제 실패 안내가 나오면 완료된 것으로 보지 말고 재시도하거나 이메일로 문의해 주세요. 이전 앱 버전에서 메뉴가 다르거나 사용할 수 없어도 아래 이메일 요청을 이용할 수 있습니다.</p>
+            <p class="warning">삭제는 되돌릴 수 없습니다. LUMI 계정이 삭제되며 Google·카카오 자체 계정은 삭제되지 않습니다. 필요한 기록은 먼저 내보내세요.</p>
+        </section>
+        <section class="section" id="record-deletion">
+            <h2>2. 계정을 유지하고 일부 데이터 삭제</h2>
             <ul>
-                <li>LUMI 앱 → 설정 → 데이터 관리 → <strong>모든 데이터 삭제</strong></li>
+                <li><strong>일기:</strong> 기록 목록에서 해당 일기를 열고 <strong>일기 삭제</strong> → 확인창의 <strong>삭제</strong>를 선택합니다.</li>
+                <li><strong>CBT:</strong> 해당 CBT 기록을 열고 <strong>삭제하기</strong> → 확인창의 <strong>삭제</strong>를 선택합니다.</li>
+                <li>로그인·동기화된 기록은 서버 삭제가 확인된 후 해당 기기에서 제거됩니다. 통신 오류가 표시되면 연결을 확인한 뒤 다시 시도해 주세요.</li>
+                <li><strong>그 외 데이터 또는 앱을 사용할 수 없는 경우:</strong> 아래 이메일로 삭제할 데이터 종류와 기록 날짜·제목·글 링크 등 식별 정보를 적어 요청해 주세요. 본문 전체를 보내지 않아도 됩니다.</li>
             </ul>
-            <p class="notice">
-                이 기능은 기기 내 로컬 데이터만 삭제합니다.
-                Firebase 서버에 동기화된 데이터 및 계정 정보는 별도로 삭제 요청이 필요합니다.
-            </p>
+            <p class="notice">개별 기록 삭제로 계정이나 다른 기록이 함께 삭제되지는 않습니다. 삭제된 개인 기록의 본문은 제거되지만, 다른 기기에서 복원되지 않도록 기록 ID와 삭제 시각은 계정 삭제까지 남을 수 있습니다.</p>
+            <p><a class="mail-action" href="mailto:kjd12359@gmail.com?subject=%5BLUMI%5D%20%EA%B3%84%EC%A0%95%20%EC%9C%A0%EC%A7%80%20%EB%B0%8F%20%EC%9D%BC%EB%B6%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD&body=%EC%9A%94%EC%B2%AD%20%EC%A2%85%EB%A5%98%3A%20%EA%B3%84%EC%A0%95%EC%9D%80%20%EC%9C%A0%EC%A7%80%ED%95%98%EA%B3%A0%20%EC%95%84%EB%9E%98%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%8C%20%EC%82%AD%EC%A0%9C%0A%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EB%B0%A9%EC%8B%9D%3A%20Google%20%2F%20%EC%B9%B4%EC%B9%B4%EC%98%A4%0A%EC%82%AC%EC%9A%A9%20%EC%A4%91%EC%9D%B8%20%EB%8B%89%EB%84%A4%EC%9E%84%3A%0A%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EC%9D%B4%EB%A9%94%EC%9D%BC(%EC%9E%88%EB%8A%94%20%EA%B2%BD%EC%9A%B0)%3A%0A%EC%82%AD%EC%A0%9C%ED%95%A0%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A2%85%EB%A5%98%3A%20%EC%9D%BC%EA%B8%B0%20%2F%20CBT%20%2F%20%EA%B8%80%20%2F%20%EB%8C%93%EA%B8%80%20%2F%20%EA%B8%B0%ED%83%80%0A%EA%B8%B0%EB%A1%9D%20%EB%82%A0%EC%A7%9C%20%EB%98%90%EB%8A%94%20%EC%A0%9C%EB%AA%A9%C2%B7%EA%B8%80%20%EB%A7%81%ED%81%AC%20%EB%93%B1%20%EC%8B%9D%EB%B3%84%20%EC%A0%95%EB%B3%B4(%EB%B3%B8%EB%AC%B8%20%EC%A0%84%EC%B2%B4%EB%8A%94%20%EB%B3%B4%EB%82%B4%EC%A7%80%20%EB%A7%88%EC%84%B8%EC%9A%94)%3A%0A%ED%9A%8C%EC%8B%A0%EB%B0%9B%EC%9D%84%20%EC%9D%B4%EB%A9%94%EC%9D%BC%3A%0A%0A%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%82%98%20%EC%9D%B8%EC%A6%9D%EB%B2%88%ED%98%B8%EB%8A%94%20%EB%B3%B4%EB%82%B4%EC%A7%80%20%EB%A7%88%EC%84%B8%EC%9A%94.">계정 유지·일부 데이터 삭제 요청</a></p>
         </section>
-
+        <section class="section" id="email-request">
+            <h2>3. 앱 없이 이메일로 삭제 요청</h2>
+            <p><strong>연락처:</strong> <a href="mailto:kjd12359@gmail.com">kjd12359@gmail.com</a></p>
+            <ol>
+                <li>아래 버튼을 누르거나 위 주소로 이메일을 보냅니다. 메일 앱이 열리지 않으면 주소를 복사해 사용해 주세요.</li>
+                <li><strong>계정과 관련 데이터를 모두 삭제</strong>할지, <strong>계정을 유지하고 일부 데이터만 삭제</strong>할지 적어 주세요.</li>
+                <li>로그인 방식(Google·카카오), 사용 중인 닉네임, 로그인 이메일(있는 경우), 회신받을 이메일을 적어 주세요. 로그인 이메일이 없는 카카오 계정도 요청할 수 있습니다.</li>
+                <li>본인 확인에 추가 정보가 필요하면 회신으로 안내합니다. 요청한 범위를 확인한 뒤 처리 결과를 회신합니다.</li>
+            </ol>
+            <p><a class="mail-action" href="mailto:kjd12359@gmail.com?subject=%5BLUMI%5D%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EC%84%9C%EB%B2%84%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD&body=%EC%9A%94%EC%B2%AD%20%EC%A2%85%EB%A5%98%3A%20LUMI%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EC%84%9C%EB%B2%84%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%0A%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EB%B0%A9%EC%8B%9D%3A%20Google%20%2F%20%EC%B9%B4%EC%B9%B4%EC%98%A4%0A%EC%82%AC%EC%9A%A9%20%EC%A4%91%EC%9D%B8%20%EB%8B%89%EB%84%A4%EC%9E%84%3A%0A%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EC%9D%B4%EB%A9%94%EC%9D%BC(%EC%9E%88%EB%8A%94%20%EA%B2%BD%EC%9A%B0)%3A%0A%EC%95%B1%20%EC%82%AC%EC%9A%A9%EC%9E%90%20ID(%EC%95%8C%EA%B3%A0%20%EC%9E%88%EB%8A%94%20%EA%B2%BD%EC%9A%B0)%3A%0A%ED%9A%8C%EC%8B%A0%EB%B0%9B%EC%9D%84%20%EC%9D%B4%EB%A9%94%EC%9D%BC%3A%0A%0A%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%82%98%20%EC%9D%B8%EC%A6%9D%EB%B2%88%ED%98%B8%EB%8A%94%20%EB%B3%B4%EB%82%B4%EC%A7%80%20%EB%A7%88%EC%84%B8%EC%9A%94.">계정 및 서버 데이터 삭제 요청</a></p>
+            <p class="notice">비밀번호, 인증번호, 주민등록번호나 감정 기록 본문 전체를 보내지 마세요. 이메일 요청은 본인 확인 완료 후 최대 7영업일 이내 처리를 목표로 하며, 확인이나 처리가 지연되면 이유와 예상 일정을 안내합니다.</p>
+        </section>
+        <section class="section" id="local-deletion">
+            <h2>4. 해당 기기의 데이터만 삭제</h2>
+            <p><strong>LUMI 앱 → 설정 → 데이터 관리 → 모든 데이터 삭제 → 삭제</strong>를 선택하면 해당 기기에 저장된 기록·초안·설정 등을 삭제합니다.</p>
+            <p class="notice">‘모든 데이터 삭제’는 해당 기기의 데이터 삭제입니다. 서버 계정·동기화 기록을 삭제하는 기능은 아닙니다. 서버 삭제는 1번 또는 2번 방법을 사용해 주세요. 다른 기기나 직접 내보낸 파일·스크린샷도 별도로 정리해야 합니다.</p>
+            <p>앱 저장공간과 캐시까지 비우려면 Android 설정 → 앱 → LUMI → 저장공간에서 데이터·캐시 삭제를 사용할 수 있습니다. 기기 제조사에 따라 메뉴 이름은 다를 수 있습니다. 앱 제거만으로 서버 데이터가 삭제되지는 않습니다.</p>
+        </section>
         <section class="section">
-            <h2>2. 서버 데이터 및 계정 삭제 요청 (회원 탈퇴)</h2>
-            <p>
-                Firebase 서버에 저장된 동기화 데이터, 커뮤니티 게시글, 익명 글 및
-                Google 연동 로그인 계정을 완전히 삭제하려면 아래 방법 중 하나로 요청해 주세요.
-            </p>
-            <p><strong>방법 A. LUMI 앱 내 설정에서 간편 삭제</strong></p>
+            <h2>5. 계정 삭제 시 제거되는 데이터</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th scope="col">데이터</th><th scope="col">처리 범위</th></tr></thead>
+                    <tbody>
+                        <tr><td>LUMI 계정·닉네임</td><td>Firebase 계정 UID, 이메일·표시 이름, 닉네임 등록과 사용자 정보 삭제</td></tr>
+                        <tr><td>일기·CBT 및 개인 동기화 정보</td><td>계정에 저장된 기록, 해당 기록의 삭제 표식과 사용자 문서 삭제</td></tr>
+                        <tr><td>커뮤니티·익명 게시판</td><td>본인이 작성한 글·댓글과 좋아요·북마크 반응 제거</td></tr>
+                        <tr><td>랭킹·신고</td><td>해당 계정의 랭킹 정보와 본인이 제출한 신고 문서 삭제</td></tr>
+                        <tr><td>해당 기기의 기록·초안·설정</td><td>앱 내 계정 삭제 성공 후 로컬 데이터 정리. 이메일로 처리하거나 다른 기기를 사용했다면 기기 데이터는 직접 삭제</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Google·카카오의 원래 계정, 다른 사람이 내보내거나 캡처한 내용, 기기 밖으로 직접 저장한 파일은 LUMI 계정 삭제로 제거되지 않습니다.</p>
+        </section>
+        <section class="section" id="retention">
+            <h2>6. 삭제 후 남을 수 있는 정보와 기간</h2>
             <ul>
-                <li>LUMI 앱 → 설정 → 계정 삭제 메뉴 → <strong>안내 사항 확인</strong> 삭제 진행</li>
+                <li><strong>Firebase 인증 데이터:</strong> 계정 삭제 후 앱 로그인은 종료됩니다. Firebase 정책에 따라 운영·백업 시스템에서 인증 데이터가 제거되기까지 최대 180일이 걸릴 수 있습니다.</li>
+                <li><strong>Crashlytics 오류·진단:</strong> Firebase 정책에 따라 90일 보관 후 운영·백업 시스템에서 제거 절차가 시작됩니다.</li>
+                <li><strong>Analytics 사용 분석:</strong> 서비스의 보관 설정과 Google Analytics 정책을 따릅니다. 일반 GA4의 사용자·이벤트 데이터 설정은 2개월 또는 14개월이며, 재이용 시 갱신되는 식별자와 집계 보고서는 별도 기준이 적용될 수 있습니다. 계정 삭제가 분석·진단 데이터의 즉시 전체 삭제를 의미하지는 않습니다.</li>
+                <li><strong>공개 게시판 삭제 표식:</strong> 삭제한 글이 다른 기기에서 다시 나타나지 않도록 글 ID·게시판 종류·삭제 시각을 동기화에 필요한 동안 유지합니다. 본문이나 계정 UID는 표식에 저장하지 않습니다. 개인 일기·CBT의 삭제 표식은 계정 삭제 때 제거됩니다.</li>
+                <li><strong>AI 처리·기술 로그:</strong> MAI 요청 처리 환경의 접속·오류 로그는 Vercel·ngrok 등 제공업체의 정책과 설정을 따릅니다. AI 전송 원문 또는 로그의 보관·삭제 확인은 이메일로 요청해 주세요.</li>
             </ul>
-            <p><strong>방법 B. 이메일로 직접 요청</strong></p>
+            <p>진단·분석 데이터에는 설치 식별자가 포함될 수 있으므로 모든 데이터가 완전히 익명이라고 보장하지 않습니다. 자세한 처리 방식은 <a href="index.html#retention">개인정보처리방침의 보관 기간</a>, <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 보관 정책</a>, <a href="https://support.google.com/analytics/answer/7667196?hl=ko" target="_blank" rel="noopener noreferrer">Analytics 보관 정책</a>을 참고해 주세요.</p>
+        </section>
+        <section class="section">
+            <h2>7. 처리 시점과 문의</h2>
             <ul>
-                <li>아래 이메일로 가입한 Google 계정 이메일 주소와 사용 중인 닉네임을 적어 보내주세요.</li>
-                <li><strong>삭제 요청 이메일:</strong> <code>kjd12359@gmail.com</code></li>
+                <li><strong>기기 데이터:</strong> 해당 기기에서 삭제 작업 시 처리됩니다.</li>
+                <li><strong>앱의 개별 기록·계정 삭제:</strong> 서버 작업이 성공하면 앱에 결과가 반영됩니다. 데이터 양과 연결 상태에 따라 시간이 걸릴 수 있습니다.</li>
+                <li><strong>이메일:</strong> 본인 확인 완료 후 최대 7영업일 이내 처리를 목표로 하며 지연 시 안내합니다.</li>
             </ul>
+            <p><strong>앱:</strong> LUMI - 감정일기 &amp; CBT<br><strong>운영:</strong> LUMI Team<br><strong>이메일:</strong> <a href="mailto:kjd12359@gmail.com">kjd12359@gmail.com</a></p>
         </section>
-
-        <section class="section">
-            <h2>3. 삭제되는 데이터</h2>
-            <p>계정 및 데이터 삭제 요청이 처리되면 다음 데이터가 영구적으로 삭제됩니다.</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>데이터 유형</th>
-                        <th>처리</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>계정 정보 (UID, 이메일, 표시 이름)</td>
-                        <td><span class="badge-delete">삭제</span></td>
-                    </tr>
-                    <tr>
-                        <td>감정 기록 및 일기</td>
-                        <td><span class="badge-delete">삭제</span></td>
-                    </tr>
-                    <tr>
-                        <td>CBT 기록</td>
-                        <td><span class="badge-delete">삭제</span></td>
-                    </tr>
-                    <tr>
-                        <td>커뮤니티 게시글 및 댓글</td>
-                        <td><span class="badge-delete">삭제</span></td>
-                    </tr>
-                    <tr>
-                        <td>앱 설정 정보 (알림, 잠금 등)</td>
-                        <td><span class="badge-delete">삭제</span></td>
-                    </tr>
-                    <tr>
-                        <td>Google 로그인 연동 정보 및 관련 계정 데이터</td>
-                        <td><span class="badge-delete">삭제 (요청 시)</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="section">
-            <h2>4. 보관될 수 있는 데이터</h2>
-            <p>다음 데이터는 법령상 의무 또는 서비스 운영 목적에 따라 일정 기간 보관될 수 있습니다.</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>데이터 유형</th>
-                        <th>보관 기간</th>
-                        <th>사유</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>오류 및 진단 로그 (Crashlytics)</td>
-                        <td><span class="badge-keep">최대 90일</span></td>
-                        <td>서비스 안정성 개선</td>
-                    </tr>
-                    <tr>
-                        <td>앱 사용 분석 데이터 (Analytics)</td>
-                        <td><span class="badge-keep">정책에 따른 기간</span></td>
-                        <td>Google Analytics 정책에 따른 기간 동안 보관</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="notice">
-                보관 기간이 경과한 데이터는 자동으로 삭제됩니다.
-                보관 중인 데이터는 식별 불가능한 형태로 처리되며, 마케팅 또는 광고 목적으로 사용되지 않습니다.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>5. 삭제 처리 기간</h2>
-            <ul>
-                <li><strong>로컬 데이터 삭제:</strong> 앱 내에서 즉시 처리</li>
-                <li><strong>서버 데이터 및 계정 삭제:</strong> 이메일 접수 후 최대 7영업일 이내 처리</li>
-            </ul>
-            <p class="warning">
-                ⚠️ 삭제된 데이터는 복구할 수 없습니다. 삭제 전 필요한 데이터를 반드시 백업해 주세요.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>6. 로컬 데이터의 완전한 제거</h2>
-            <p>
-                기기에 캐시나 임시 파일 형태로 남아있을 수 있는 데이터까지 완전히 제거하려면,
-                앱 내에서 '모든 데이터 삭제'를 실행한 후 LUMI 앱을 기기에서 삭제(언인스톨)해 주세요.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>7. 문의처</h2>
-            <p>계정 삭제 관련 문의사항은 아래 이메일로 연락해 주세요.</p>
-            <p><strong>앱 이름:</strong> LUMI</p>
-            <p><strong>개발자:</strong> LUMI Team</p>
-            <p><strong>이메일:</strong> <code>kjd12359@gmail.com</code></p>
-        </section>
-
-        <footer>© LUMI. All rights reserved.</footer>
+        <footer>© LUMI. All rights reserved. · <a href="index.html">개인정보처리방침</a></footer>
     </main>
 </body>
 </html>
